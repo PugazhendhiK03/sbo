@@ -1,8 +1,10 @@
+/* main.css */
 :root {
     --primary-color: #2E8BC0; /* Deep Sky Blue */
     --secondary-color: #4B9CD3; /* Sky Blue */
     --accent-color: #1B9CFC; /* Bright Blue */
     --background-color: #F0F4F8; /* Light Grey */
+    --background-2: #fff;
     --text-color: #333333; /* Charcoal */
     --button-color: #56CCF2; /* Light Sky Blue */
     --button-hover-color: #45A8E5; /* Darker Sky Blue */
@@ -31,6 +33,14 @@ body {
     padding: 0.5rem 1rem;
     margin: 1rem;
     border-radius: 2px;
+    position: relative; /* Position relative for dropdown alignment */
+}
+
+.logo {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    order: 1;
 }
 
 .logo > a {
@@ -47,7 +57,10 @@ body {
 }
 
 .navbar {
-    position: relative;
+    flex: 1;
+    order: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-list {
@@ -68,21 +81,86 @@ body {
     color: var(--background-color);
 }
 
-@media (max-width: 640px) {
+.account-icons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    order: 3;
+}
+
+.account-icons > i {
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: 0.7rem;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.account-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--background-2);
+    box-shadow: 0px 1px 6px 2px #dadada;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.account-dropdown.visible {
+    display: block;
+}
+
+.account-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.account-dropdown ul li {
+    margin-bottom: 0.5rem;
+}
+
+.account-dropdown ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem 0.5rem;
+        margin: 1rem;
+    }
+
+    .navbar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .menu-bar {
+        display: block;
+        position: absolute;
+        /* top: 0; */
+        left: 0;
+        padding: 0.5rem;
+    }
+
     .nav-list {
         display: none;
         flex-direction: column;
         background-color: var(--primary-color);
         position: absolute;
-        top: 100%;
-        right: 0;
+        top: 2rem;
+        left: 0;
+        width: 200px;
         padding: 1rem;
         z-index: 1000;
         border-radius: 5px;
         transition: all 0.3s ease-in-out;
-        align-items: center;
-        justify-content: space-evenly;
-        border: 1px solid var(--background-color);
     }
 
     .nav-list.active {
@@ -98,7 +176,15 @@ body {
         border-bottom: none;
     }
 
-    .menu-bar {
-        display: block;
+    .logo {
+        order: 2;
+        margin-left: auto;
+        position: absolute;
+        left: 4rem;
+    }
+
+    .account-icons {
+        order: 3;
+        margin-left: auto;
     }
 }

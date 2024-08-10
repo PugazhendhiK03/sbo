@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const tagsHtml = post.tags ? `<p>Tags: ${post.tags.join(', ')}</p>` : '';
 
             postElement.innerHTML = `
-                <h3>${post.title}</h3>
-                <img src="${post.image}" alt="${post.title}">
-                <p>${post.content}</p>
-                ${post.link ? `<a href="${post.link}" target="_blank">${post.link}</a>` : ''}
+                <h3 class="postTitle">${post.title}</h3>
+                <img src="${post.image}" alt="${post.title}" class="postImg">
+                <p class="postContent">${post.content}</p>
+                ${post.link ? `<a href="${post.link}" target="_blank" class="postLink">${post.link}</a>` : ''}
                 ${tagsHtml}
             `;
             postsContainer.appendChild(postElement);

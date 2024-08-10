@@ -1,8 +1,65 @@
 .index-main {
     display: flex;
+    width: 100%;
     flex-wrap: wrap;
+    flex-direction: row;
     gap: 1rem;
-    padding: 2rem;
+    padding: 1rem;
     background: var(--background-color); /* Set a background color for consistency */
 }
 
+.index-ads-left {
+    flex: 1;
+    min-height: 100px; /* Set a minimum height */
+}
+
+
+.index-posts {
+    flex: 3;
+    border-radius: 2px;
+    background: var(--background-2);
+    box-shadow: 0px 1px 6px 2px #dadada;
+    padding: 1rem;
+}
+
+.index-posts article {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc; /* Add a line to split posts */
+    margin-bottom: 1rem;
+}
+
+.index-posts article:last-child {
+    border-bottom: none; /* Remove the line after the last post */
+    margin-bottom: 0;
+}
+
+.postTitle {
+    font-size: 30px;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color); /* Customize as needed */
+}
+
+.postImg {
+    width: 100%;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.postContent {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.postLink {
+    font-size: 0.9rem;
+    color: var(--link-color); /* Customize as needed */
+    text-decoration: underline;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 680px) {
+    .index-ads-left {
+        display: none;
+    }
+}
