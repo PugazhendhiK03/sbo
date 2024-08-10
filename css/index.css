@@ -1,0 +1,8 @@
+.index-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    background: var(--background-color); /* Set a background color for consistency */
+}
+

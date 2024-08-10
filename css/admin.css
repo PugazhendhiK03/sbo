@@ -1,0 +1,53 @@
+.admin-main {
+    padding: 2rem;
+    background: var(--background-color); /* Set a background color for consistency */
+}
+
+.admin-main h2 {
+    margin-bottom: 1rem;
+    color: var(--text-color); /* Ensure headers have the correct text color */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--text-color); /* Use text color for borders */
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: var(--button-color); /* Updated button color */
+    color: var(--background-color); /* Ensure text is readable on button */
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--button-hover-color); /* Updated button hover color */
+}
+
+#postImagePreview, #editImagePreview {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--text-color); /* Use text color for borders */
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .admin-main {
+        padding: 1rem;
+    }
+
+    form {
+        width: 100%;
+    }
+}
